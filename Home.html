@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shelter Property Listings</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/js/all.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+    <nav class="p-4 border-b">
+      <div class="container mx-auto flex justify-between items-center">
+        <img src="images/logo.png" alt="Shelter Logo" class="h-8" />
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-gray-600">Home</a>
+          <a href="#" class="text-gray-600">List properties</a>
+          <a href="#" class="text-gray-600">Blog</a>
+          <a href="#" class="text-gray-600">About Us</a>
+        </div>
+        <div>
+          <button class="bg-blue-900 text-white px-4 py-2 rounded">
+            Contact Now
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section with Search -->
+    <div class="relative h-[400px]">
+      <img
+        src="images/hero.png"
+        alt="Hero Background"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center">
+        <div>
+          <!-- Booking Tabs -->
+          <div class="bg-white rounded-t-lg ml-0 p-2 gap-2 w-[80%]">
+            <button class="px-4 py-2 text-blue-900 font-medium">Booking</button>
+            <button class="px-4 py-2 text-gray-500">For Rent</button>
+            <button class="px-4 py-2 text-gray-500">For Lease</button>
+            <button class="px-4 py-2 text-gray-500">For Sale</button>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="bg-white p-4 rounded-b-lg flex gap-4 w-[600px]">
+            <select class="flex-1 border rounded p-2">
+              <option>Location</option>
+            </select>
+            <select class="flex-1 border rounded p-2">
+              <option>Property type</option>
+            </select>
+            <input
+              type="text"
+              placeholder="Price"
+              class="flex-1 border rounded p-2"
+            />
+            <button class="bg-blue-900 text-white px-6 py-2 rounded">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exclusive Offers Section -->
+    <div
+      class="container mx-auto flex items-center flex-col justify-center py-12"
+    >
+      <h2 class="text-2xl font-semibold mb-2">Exclusive Offers</h2>
+      <p class="text-gray-600 mb-8">
+        Get first access to premium listings from our most reliable laters!
+      </p>
+
+      <!-- Property Type Filters -->
+      <div class="flex gap-4 mb-8">
+        <button class="px-4 py-2 bg-blue-900 text-white border rounded-md">
+          Short let
+        </button>
+        <button class="px-4 py-2 border rounded-md">Event space</button>
+        <button class="px-4 py-2 border rounded-md">Apartments</button>
+        <button class="px-4 py-2 rounded-md">Lands</button>
+        <button class="px-4 py-2 border rounded-md">House</button>
+      </div>
+
+      <!-- Property Cards Grid -->
+      <div
+        class="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <!-- Card 1 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="relative">
+            <img
+              src="images/card-1.png"
+              alt="Property Image"
+              class="w-full h-48 object-cover"
+            />
+            <div
+              class="absolute top-2 left-2 text-white text-xs px-2 py-1 rounded flex items-center gap-2 justify-center"
+            >
+              <div class="bg-black rounded-full px-3 py-1">Land</div>
+              <div class="bg-yellow-500 text-black rounded-full px-3 py-1">
+                For Sale
+              </div>
+            </div>
+            <div
+              class="absolute top-2 right-2 bg-gray-400 rounded-lg text-white text-xs px-2 py-1 rounded"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <div
+              class="absolute flex gap-2 bottom-0 left-2 text-xs px-2 py-1 items-center mb-2"
+            >
+              <span class="text-lg text-white font-bold">₦200,000,000</span>
+              <button
+                class="bg-gray-500 text-white text-xs px-3 py-1 rounded-full"
+              >
+                <i class="fa-solid fa-lock"></i>
+                Escrow
+              </button>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold mb-1">7 plots of land</h3>
+              <img src="images/verify.png" alt="verify tick" class="w-4 h-4" />
+              <div>
+                <i class="fa-solid fa-star"></i>
+                <span>5</span>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mb- w-[85%]">
+              <i class="fa-solid fa-location-dot"></i>
+              Ademola adetokunbo crescent wuse 2, Abuja, Nigeria
+            </p>
+            <div
+              class="flex items-center justify-between text-gray-600 text-sm"
+            >
+              <span class="mr-4">
+                <i class="fa-solid fa-expand"></i>
+                10 hectares
+              </span>
+              <div class="flex items-start flex-col">
+                <span>Posted</span>
+                <span>23/09/2024</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600 text-sm mt-2">
+              <i class="fa-regular fa-clock"></i>
+              <span>Responds within 3 hours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="relative">
+            <img
+              src="images/card-1.png"
+              alt="Property Image"
+              class="w-full h-48 object-cover"
+            />
+            <div
+              class="absolute top-2 left-2 text-white text-xs px-2 py-1 rounded flex items-center gap-2 justify-center"
+            >
+              <div class="bg-black rounded-full px-3 py-1">Land</div>
+              <div class="bg-yellow-500 text-black rounded-full px-3 py-1">
+                For Sale
+              </div>
+            </div>
+            <div
+              class="absolute top-2 right-2 bg-gray-400 rounded-lg text-white text-xs px-2 py-1 rounded"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <div
+              class="absolute flex gap-2 bottom-0 left-2 text-xs px-2 py-1 items-center mb-2"
+            >
+              <span class="text-lg text-white font-bold">₦200,000,000</span>
+              <button
+                class="bg-gray-500 text-white text-xs px-3 py-1 rounded-full"
+              >
+                <i class="fa-solid fa-lock"></i>
+                Escrow
+              </button>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold mb-1">7 plots of land</h3>
+              <img src="images/verify.png" alt="verify tick" class="w-4 h-4" />
+              <div>
+                <i class="fa-solid fa-star"></i>
+                <span>5</span>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mb- w-[85%]">
+              <i class="fa-solid fa-location-dot"></i>
+              Ademola adetokunbo crescent wuse 2, Abuja, Nigeria
+            </p>
+            <div
+              class="flex items-center justify-between text-gray-600 text-sm"
+            >
+              <span class="mr-4">
+                <i class="fa-solid fa-expand"></i>
+                10 hectares
+              </span>
+              <div class="flex items-start flex-col">
+                <span>Posted</span>
+                <span>23/09/2024</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600 text-sm mt-2">
+              <i class="fa-regular fa-clock"></i>
+              <span>Responds within 3 hours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="relative">
+            <img
+              src="images/card-1.png"
+              alt="Property Image"
+              class="w-full h-48 object-cover"
+            />
+            <div
+              class="absolute top-2 left-2 text-white text-xs px-2 py-1 rounded flex items-center gap-2 justify-center"
+            >
+              <div class="bg-black rounded-full px-3 py-1">Land</div>
+              <div class="bg-yellow-500 text-black rounded-full px-3 py-1">
+                For Sale
+              </div>
+            </div>
+            <div
+              class="absolute top-2 right-2 bg-gray-400 rounded-lg text-white text-xs px-2 py-1 rounded"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <div
+              class="absolute flex gap-2 bottom-0 left-2 text-xs px-2 py-1 items-center mb-2"
+            >
+              <span class="text-lg text-white font-bold">₦200,000,000</span>
+              <button
+                class="bg-gray-500 text-white text-xs px-3 py-1 rounded-full"
+              >
+                <i class="fa-solid fa-lock"></i>
+                Escrow
+              </button>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold mb-1">7 plots of land</h3>
+              <img src="images/verify.png" alt="verify tick" class="w-4 h-4" />
+              <div>
+                <i class="fa-solid fa-star"></i>
+                <span>5</span>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mb- w-[85%]">
+              <i class="fa-solid fa-location-dot"></i>
+              Ademola adetokunbo crescent wuse 2, Abuja, Nigeria
+            </p>
+            <div
+              class="flex items-center justify-between text-gray-600 text-sm"
+            >
+              <span class="mr-4">
+                <i class="fa-solid fa-expand"></i>
+                10 hectares
+              </span>
+              <div class="flex items-start flex-col">
+                <span>Posted</span>
+                <span>23/09/2024</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600 text-sm mt-2">
+              <i class="fa-regular fa-clock"></i>
+              <span>Responds within 3 hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popular listers -->
+    <div class="container mx-auto px-4 py-8">
+      <h2 class="text-2xl font-bold mb-6">Most Popular Listers of the Month</h2>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+      >
+        <!-- Card 1 -->
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <div class="text-center">
+            <div
+              class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full inline-block mb-2"
+            >
+              Trusted by 2k+ customers
+            </div>
+            <img
+              src="images/profile.png"
+              alt="Profile Image"
+              class="w-24 h-24 mx-auto rounded-full mb-2"
+            />
+            <h3 class="text-lg font-semibold">
+              Rayna Luxury Homes & Property Nig
+            </h3>
+            <p class="text-gray-600 text-sm mb-2">Abuja, Nigeria</p>
+            <div
+              class="flex justify-center space-x-2 text-xs text-gray-600 mb-4"
+            >
+              <span class="bg-green-100 px-3 rounded-full py-1">Booking</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">Rent</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">Lease</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">For sale</span>
+            </div>
+            <button
+              class="bg-[#001D6E] text-white w-full px-4 py-1 rounded-full"
+            >
+              View listings
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <div class="text-center">
+            <div
+              class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full inline-block mb-2"
+            >
+              Trusted by 2k+ customers
+            </div>
+            <img
+              src="images/profile.png"
+              alt="Profile Image"
+              class="w-24 h-24 mx-auto rounded-full mb-2"
+            />
+            <h3 class="text-lg font-semibold">
+              Rayna Luxury Homes & Property Nig
+            </h3>
+            <p class="text-gray-600 text-sm mb-2">Abuja, Nigeria</p>
+            <div
+              class="flex justify-center space-x-2 text-xs text-gray-600 mb-4"
+            >
+              <span class="bg-green-100 px-3 rounded-full py-1">Booking</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">Rent</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">Lease</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">For sale</span>
+            </div>
+            <button
+              class="bg-[#001D6E] text-white w-full px-4 py-1 rounded-full"
+            >
+              View listings
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <div class="text-center">
+            <div
+              class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full inline-block mb-2"
+            >
+              Trusted by 2k+ customers
+            </div>
+            <img
+              src="images/profile.png"
+              alt="Profile Image"
+              class="w-24 h-24 mx-auto rounded-full mb-2"
+            />
+            <h3 class="text-lg font-semibold">
+              Rayna Luxury Homes & Property Nig
+            </h3>
+            <p class="text-gray-600 text-sm mb-2">Abuja, Nigeria</p>
+            <div
+              class="flex justify-center space-x-2 text-xs text-gray-600 mb-4"
+            >
+              <span class="bg-green-100 px-3 rounded-full py-1">Booking</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">Rent</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">Lease</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">For sale</span>
+            </div>
+            <button
+              class="bg-[#001D6E] text-white w-full px-4 py-1 rounded-full"
+            >
+              View listings
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <div class="text-center">
+            <div
+              class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full inline-block mb-2"
+            >
+              Trusted by 2k+ customers
+            </div>
+            <img
+              src="images/profile.png"
+              alt="Profile Image"
+              class="w-24 h-24 mx-auto rounded-full mb-2"
+            />
+            <h3 class="text-lg font-semibold">
+              Rayna Luxury Homes & Property Nig
+            </h3>
+            <p class="text-gray-600 text-sm mb-2">Abuja, Nigeria</p>
+            <div
+              class="flex justify-center space-x-2 text-xs text-gray-600 mb-4"
+            >
+              <span class="bg-green-100 px-3 rounded-full py-1">Booking</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">Rent</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">Lease</span>
+              <span class="bg-green-100 px-3 rounded-full py-1">For sale</span>
+            </div>
+            <button
+              class="bg-[#001D6E] text-white w-full px-4 py-1 rounded-full"
+            >
+              View listings
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Likes -->
+    <div class="container mx-auto px-4 py-8">
+      <h2 class="text-2xl font-bold mb-6">You may also like</h2>
+
+      <div
+        class="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <!-- Card 1 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="relative">
+            <img
+              src="images/card-1.png"
+              alt="Property Image"
+              class="w-full h-48 object-cover"
+            />
+            <div
+              class="absolute top-2 left-2 text-white text-xs px-2 py-1 rounded flex items-center gap-2 justify-center"
+            >
+              <div class="bg-black rounded-full px-3 py-1">Land</div>
+              <div class="bg-yellow-500 text-black rounded-full px-3 py-1">
+                For Sale
+              </div>
+            </div>
+            <div
+              class="absolute top-2 right-2 bg-gray-400 rounded-lg text-white text-xs px-2 py-1 rounded"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <div
+              class="absolute flex gap-2 bottom-0 left-2 text-xs px-2 py-1 items-center mb-2"
+            >
+              <span class="text-lg text-white font-bold">₦200,000,000</span>
+              <button
+                class="bg-gray-500 text-white text-xs px-3 py-1 rounded-full"
+              >
+                <i class="fa-solid fa-lock"></i>
+                Escrow
+              </button>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold mb-1">7 plots of land</h3>
+              <img src="images/verify.png" alt="verify tick" class="w-4 h-4" />
+              <div>
+                <i class="fa-solid fa-star"></i>
+                <span>5</span>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mb- w-[85%]">
+              <i class="fa-solid fa-location-dot"></i>
+              Ademola adetokunbo crescent wuse 2, Abuja, Nigeria
+            </p>
+            <div
+              class="flex items-center justify-between text-gray-600 text-sm"
+            >
+              <span class="mr-4">
+                <i class="fa-solid fa-expand"></i>
+                10 hectares
+              </span>
+              <div class="flex items-start flex-col">
+                <span>Posted</span>
+                <span>23/09/2024</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600 text-sm mt-2">
+              <i class="fa-regular fa-clock"></i>
+              <span>Responds within 3 hours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="relative">
+            <img
+              src="images/card-1.png"
+              alt="Property Image"
+              class="w-full h-48 object-cover"
+            />
+            <div
+              class="absolute top-2 left-2 text-white text-xs px-2 py-1 rounded flex items-center gap-2 justify-center"
+            >
+              <div class="bg-black rounded-full px-3 py-1">Land</div>
+              <div class="bg-yellow-500 text-black rounded-full px-3 py-1">
+                For Sale
+              </div>
+            </div>
+            <div
+              class="absolute top-2 right-2 bg-gray-400 rounded-lg text-white text-xs px-2 py-1 rounded"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <div
+              class="absolute flex gap-2 bottom-0 left-2 text-xs px-2 py-1 items-center mb-2"
+            >
+              <span class="text-lg text-white font-bold">₦200,000,000</span>
+              <button
+                class="bg-gray-500 text-white text-xs px-3 py-1 rounded-full"
+              >
+                <i class="fa-solid fa-lock"></i>
+                Escrow
+              </button>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold mb-1">7 plots of land</h3>
+              <img src="images/verify.png" alt="verify tick" class="w-4 h-4" />
+              <div>
+                <i class="fa-solid fa-star"></i>
+                <span>5</span>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mb- w-[85%]">
+              <i class="fa-solid fa-location-dot"></i>
+              Ademola adetokunbo crescent wuse 2, Abuja, Nigeria
+            </p>
+            <div
+              class="flex items-center justify-between text-gray-600 text-sm"
+            >
+              <span class="mr-4">
+                <i class="fa-solid fa-expand"></i>
+                10 hectares
+              </span>
+              <div class="flex items-start flex-col">
+                <span>Posted</span>
+                <span>23/09/2024</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600 text-sm mt-2">
+              <i class="fa-regular fa-clock"></i>
+              <span>Responds within 3 hours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="relative">
+            <img
+              src="images/card-1.png"
+              alt="Property Image"
+              class="w-full h-48 object-cover"
+            />
+            <div
+              class="absolute top-2 left-2 text-white text-xs px-2 py-1 rounded flex items-center gap-2 justify-center"
+            >
+              <div class="bg-black rounded-full px-3 py-1">Land</div>
+              <div class="bg-yellow-500 text-black rounded-full px-3 py-1">
+                For Sale
+              </div>
+            </div>
+            <div
+              class="absolute top-2 right-2 bg-gray-400 rounded-lg text-white text-xs px-2 py-1 rounded"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <div
+              class="absolute flex gap-2 bottom-0 left-2 text-xs px-2 py-1 items-center mb-2"
+            >
+              <span class="text-lg text-white font-bold">₦200,000,000</span>
+              <button
+                class="bg-gray-500 text-white text-xs px-3 py-1 rounded-full"
+              >
+                <i class="fa-solid fa-lock"></i>
+                Escrow
+              </button>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold mb-1">7 plots of land</h3>
+              <img src="images/verify.png" alt="verify tick" class="w-4 h-4" />
+              <div>
+                <i class="fa-solid fa-star"></i>
+                <span>5</span>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mb- w-[85%]">
+              <i class="fa-solid fa-location-dot"></i>
+              Ademola adetokunbo crescent wuse 2, Abuja, Nigeria
+            </p>
+            <div
+              class="flex items-center justify-between text-gray-600 text-sm"
+            >
+              <span class="mr-4">
+                <i class="fa-solid fa-expand"></i>
+                10 hectares
+              </span>
+              <div class="flex items-start flex-col">
+                <span>Posted</span>
+                <span>23/09/2024</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600 text-sm mt-2">
+              <i class="fa-regular fa-clock"></i>
+              <span>Responds within 3 hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-black text-white rounded-t-3xl">
+      <div class="max-w-screen-xl mx-auto p-6">
+        <header class="md:flex justify-between items-center py-4">
+          <h1 class="text-xl md:text-3xl font-bold">Your Perfect Property? It's Here.</h1>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <button class="bg-white text-black text-[10px] whitespace-nowrap md:text-sm px-4 py-2 rounded-lg">
+              Find properties
+            </button>
+            <button class="bg-white text-black text-[10px] whitespace-nowrap md:text-sm px-4 py-2 rounded-lg">
+              Create listing
+            </button>
+          </div>
+        </header>
+
+        <div class="block md:flex items-center justify-between gap-10 mt-6 md:mt-0">
+          <div
+            class="rounded-3xl p-6 flex justify-between items-center bg-[#F2F5FF] w-full md:w-1/2"
+          >
+            <div class="flex-1 flex flex-col items-center justify-center">
+              <div class="w-[158.19px] h-[32px]">
+                <img
+                  src="images/logo.png"
+                  alt="Shelter Logo"
+                  class="object-cover h-full w-full"
+                />
+              </div>
+              <p class="mb-4 text-black font-medium">
+                Connects you with verified, high-quality properties. Whether
+                you're listing a space or looking to book, we ensure every
+                property meets top standards for a smooth and trustworthy
+                experience.
+              </p>
+              <div class="flex space-x-2 items-start text-start ml-0">
+                <img
+                  src="images/google.png"
+                  alt="Google Play"
+                  class="w-24 h-8"
+                />
+                <img src="images/apple.png" alt="App Store" class="w-24 h-8" />
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-8 w-full md:w-1/2 mt-10 md:mt-0">
+            <div>
+              <h3 class="font-bold mb-2">Popular cities</h3>
+              <ul class="space-y-1">
+                <li>Abuja</li>
+                <li>Lagos</li>
+                <li>Ibadan</li>
+                <li>Benin</li>
+                <li>Kano</li>
+                <li>Port-Harcourt</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold mb-2">Properties</h3>
+              <ul class="space-y-1">
+                <li>Shortlet</li>
+                <li>Hotels</li>
+                <li>Event spaces</li>
+                <li>Apartments</li>
+                <li>Land</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold mb-2">Resources</h3>
+              <ul class="space-y-1">
+                <li>About us</li>
+                <li>Blog</li>
+                <li>Become a lister</li>
+                <li>Terms</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 flex items-center justify-between w-full md:w-1/2">
+          <p>&copy; 2024 Shelter</p>
+          <div class="flex items-center space-x-2">
+            <div class="bg-white w-6 h-6 rounded-md">
+              <img src="images/facebook.png" alt="" class="w-full h-full" />
+            </div>
+            <div class="bg-white w-6 h-6 rounded-md">
+              <img src="images/twitter.png" alt="" class="w-full h-full" />
+            </div>
+            <div class="bg-white w-6 h-6 rounded-md">
+              <img src="images/instagram.png" alt="" class="w-full h-full" />
+            </div>
+            <div class="bg-white w-6 h-6 rounded-md">
+              <img src="images/linkedIn.png" alt="" class="w-full h-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shelter Property Listings</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="relative bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="images/logo.png" alt="Shelter Logo" class="h-8" />
+      </div>
+
+      <!-- Hamburger Menu Button -->
+      <button id="hamburgerBtn" class="md:hidden text-gray-700 focus:outline-none z-60">
+        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <ul id="desktopMenu" class="hidden md:flex space-x-8">
+        <li>
+          <a href="index.html" class="text-gray-700 hover:text-blue-900">Home</a>
+        </li>
+        <li>
+          <a href="listPropeties.html" class="text-gray-700 hover:text-blue-900">List a property</a>
+        </li>
+        <li>
+          <a href="blog.html" class="text-gray-700 hover:text-blue-900">Blog</a>
+        </li>
+        <li>
+          <a href="aboutUs.html" class="text-gray-700 hover:text-blue-900">About us</a>
+        </li>
+      </ul>
+
+      <!-- Desktop Location and CTA -->
+      <div id="desktopActions" class="hidden md:flex items-center space-x-4 z-10">
+        <div class="flex items-center text-gray-700 gap-2">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Abuja, Nigeria</span>
+        </div>
+        <button class="flex items-center px-4 py-2 bg-blue-900 text-white rounded-full gap-2">
+          <i class="fa-regular fa-user"></i>
+          Get started
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="md:hidden fixed inset-0 bg-white z-50 overflow-y-auto">
+      <div class="p-4 relative">
+        <!-- Close Button -->
+        <button id="closeBtn" class="absolute top-4 right-4 text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Logo in Mobile Menu -->
+        <div class="flex justify-center mb-8 mt-8">
+          <img src="images/logo.png" alt="Shelter Logo" class="h-10" />
+        </div>
+
+        <!-- Menu Items -->
+        <ul class="space-y-6 text-center">
+          <li>
+            <a href="index.html" class="block text-xl text-gray-700 hover:text-blue-900 py-2">Home</a>
+          </li>
+          <li>
+            <a href="listPropeties.html" class="block text-xl text-gray-700 hover:text-blue-900 py-2">List a
+              property</a>
+          </li>
+          <li>
+            <a href="blog.html" class="block text-xl text-gray-700 hover:text-blue-900 py-2">Blog</a>
+          </li>
+          <li>
+            <a href="aboutUs.html" class="block text-xl text-gray-700 hover:text-blue-900 py-2">About us</a>
+          </li>
+        </ul>
+
+        <div class="mt-12 px-4 space-y-4">
+          <div class="flex items-center justify-center text-gray-700 gap-2 text-lg">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Abuja, Nigeria</span>
+          </div>
+          <button
+            class="w-full flex items-center justify-center px-4 py-3 bg-blue-900 text-white rounded-full gap-2 text-lg">
+            <i class="fa-regular fa-user"></i>
+            Get started
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section with Semi-circular background -->
+  <div class="hero">
+    <div class="relative bg-blue-900 h-[20rem]">
+      <div class="absolute inset-x-0 bottom-0 h-20 bg-white clip-circle"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <h1 class="text-white text-4xl font-bold -mt-20">About us</h1>
+      </div>
+    </div>
+
+    <!-- Images Section -->
+    <div class="relative max-w-6xl mx-auto px-4 md:-mt-10">
+      <div
+        class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-wrap justify-center items-end space-x-0 sm:space-x-8 w-full">
+        <img src="images/image.png" alt="Image 1"
+          class="w-64 h-40 object-cover rounded-lg shadow-lg mb-4 sm:mb-0 hidden md:flex" />
+        <img src="images/aboutImage.png" alt="Image 2"
+          class="w-64 h-48 object-cover rounded-lg shadow-lg mb-4 sm:mb-0 sm:-mb-4" />
+        <img src="images/image4.png" alt="Image 3" class="w-64 h-40 object-cover rounded-lg shadow-lg hidden md:flex" />
+      </div>
+    </div>
+  </div>
+
+  <!-- section mission -->
+  <section class="bg-blue-50 mt-40 sm:mt-40">
+    <div class="max-w-6xl mx-auto py-16 px-4 flex flex-col sm:flex-row items-center">
+      <div class="w-full sm:w-1/2 mb-8 sm:mb-0">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h1>
+        <p class="text-gray-700">
+          Our mission is to simplify real estate transactions by connecting
+          property owners, agents, and buyers on a trusted platform that
+          ensures transparency, security, and convenience. We aim to provide
+          high-quality listings and seamless experiences for everyone looking
+          to buy, rent, or book properties.
+        </p>
+      </div>
+      <div class="w-full sm:w-1/2 flex justify-center sm:justify-end">
+        <div class="relative">
+          <img src="images/imag2.png" alt="Image 1" class="w-64 h-48 object-cover rounded-lg shadow-lg" />
+          <img src="images/image.png" alt="Image 2"
+            class="w-48 h-32 object-cover rounded-lg shadow-lg absolute bottom-0 left-0 transform translate-y-1/4 -translate-x-1/4" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- our vision -->
+  <section class="bg-blue-50">
+    <div class="max-w-6xl mx-auto py-16 px-4 flex flex-col-reverse sm:flex-row items-center">
+      <div class="w-full sm:w-1/2 flex justify-center sm:justify-start mt-8 sm:mt-0">
+        <div class="relative">
+          <img src="images/imag2.png" alt="Image 1" class="w-64 h-48 object-cover rounded-lg shadow-lg" />
+          <img src="images/image.png" alt="Image 2"
+            class="w-48 h-32 object-cover rounded-lg shadow-lg absolute bottom-0 right-0 transform translate-y-1/4 translate-x-1/4" />
+        </div>
+      </div>
+      <div class="w-full sm:w-1/2">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h1>
+        <p class="text-gray-700">
+          Our vision is to become the leading platform for real estate
+          transactions, known for our innovative solutions, user-friendly
+          interface, and commitment to excellence. We strive to revolutionize
+          the property market by leveraging technology to create seamless,
+          efficient, and enjoyable experiences for all our users.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- our services  -->
+  <section class="overflow-hidden py-32">
+    <div class="flex flex-col md:flex-row">
+      <div class="w-full md:w-2/5 relative overflow-hidden bg-white py-32">
+        <div class="h-64 md:h-full flex items-center">
+          <div class="absolute left-0 w-[95%] h-[80%] overflow-hidden">
+            <div class="w-full h-full rounded-full overflow-hidden"
+              style="border-top-left-radius: 0; border-bottom-left-radius: 0;">
+              <img src="images/service.png" alt="Person with House" class="w-full h-full object-cover object-center" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="w-full md:w-3/5 px-4 py-16 md:py-16 md:pl-16 ">
+        <div class="max-w-xl mx-auto md:ml-0">
+          <h1 class="text-2xl font-bold text-gray-800 mb-8">Our Services</h1>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h2 class="text-lg font-bold text-blue-600 mb-2">
+                Escrow for Payments
+              </h2>
+              <p class="text-gray-600">
+                We secure all transactions by holding funds in escrow until both
+                parties are satisfied.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h2 class="text-lg font-bold text-blue-600 mb-2">
+                Buy, Sell, or Rent
+              </h2>
+              <p class="text-gray-600">
+                We secure all transactions by holding funds in escrow until both
+                parties are satisfied.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h2 class="text-lg font-bold text-blue-600 mb-2">
+                Verified Listings
+              </h2>
+              <p class="text-gray-600">
+                Discover quality properties you won't find anywhere else, all at
+                great deals, listed by trusted listers.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h2 class="text-lg font-bold text-blue-600 mb-2">
+                Branding Package (Optional)
+              </h2>
+              <p class="text-gray-600">
+                We offer a professional branding package to help you capture
+                high-quality photos that meet our listing criteria.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-screen-xl p-4">
+      <h1 class="text-2xl font-bold text-center mb-6">
+        Frequently Asked Questions
+      </h1>
+
+      <!-- FAQ Item 1 -->
+      <div class="mb-4">
+        <div class="p-4 border rounded-lg shadow-sm bg-white">
+          <div class="flex justify-between items-center">
+            <h2 class="font-semibold text-lg text-blue-600">
+              What is the primary goal of Shetta?
+            </h2>
+            <button class="text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+          <p class="mt-2 text-gray-600">
+            The primary goal of this website is to connect agents and property
+            owners with potential buyers, renters, or short-stay tenants. It
+            provides a trusted platform where users can list, buy, rent, or
+            book properties securely and easily, ensuring seamless
+            transactions and customer satisfaction.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="mb-4">
+        <div class="p-4 border rounded-lg shadow-sm bg-white">
+          <div class="flex justify-between items-center">
+            <h2 class="font-semibold text-lg">
+              What is the primary goal of Shetta?
+            </h2>
+            <button class="text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="mb-4">
+        <div class="p-4 border rounded-lg shadow-sm bg-white">
+          <div class="flex justify-between items-center">
+            <h2 class="font-semibold text-lg">
+              What is the primary goal of Shetta?
+            </h2>
+            <button class="text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="mb-4">
+        <div class="p-4 border rounded-lg shadow-sm bg-white">
+          <div class="flex justify-between items-center">
+            <h2 class="font-semibold text-lg">
+              What is the primary goal of Shetta?
+            </h2>
+            <button class="text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="mb-4">
+        <div class="p-4 border rounded-lg shadow-sm bg-white">
+          <div class="flex justify-between items-center">
+            <h2 class="font-semibold text-lg">
+              What is the primary goal of Shetta?
+            </h2>
+            <button class="text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact us form -->
+  <section class="bg-white flex items-center justify-center min-h-screen">
+    <div class="bg-white border-2 border-gray-200 rounded-lg p-8 md:flex items-end gap-6 max-w-4xl">
+      <div class="md:w-1/2 text-end">
+        <img src="images/Thinking face-cuate.svg" alt="Illustration" class="w-full h-auto" />
+      </div>
+      <div class="md:w-1/2 px-8 border-2 border-gray-300 rounded-xl flex items-center flex-col justify-center py-5">
+        <h2 class="text-xl font-bold mb-4">Any Questions?</h2>
+        <p class="mb-6">
+          Have an issue? We're ready to help! Send us a message, and we'll be
+          in touch in no time.
+        </p>
+        <form class="">
+          <div class="flex mb-4">
+            <input type="text" placeholder="First Name" class="w-1/2 p-2 border rounded mr-2" />
+            <input type="text" placeholder="Last Name" class="w-1/2 p-2 border rounded ml-2" />
+          </div>
+          <div class="mb-4">
+            <input type="email" placeholder="Email" class="w-full p-2 border rounded" />
+          </div>
+          <div class="mb-4">
+            <textarea placeholder="Write your message" class="w-full p-2 border rounded h-32"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-[#001D6E] text-white p-2 rounded">
+            Submit Ticket
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <div class="mapouter">
+    <div class="gmap_canvas">
+      <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Federal Ministry of Finance headquarter&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+
+      </iframe>
+      <a href="https://embed-googlemap.com">
+        google map embed html
+      </a>
+    </div>
+    <style>
+      .mapouter {
+        position: relative;
+        text-align: right;
+        width: 100%;
+        height: 400px;
+      }
+
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        width: 100%;
+        height: 400px;
+      }
+
+      .gmap_iframe {
+        height: 400px !important;
+      }
+    </style>
+  </div>
+
+  <!-- footer -->
+  <footer class="bg-black text-white rounded-t-3xl mt-20">
+    <div class="max-w-screen-xl mx-auto p-6">
+      <header class="md:flex justify-between items-center py-4">
+        <h1 class="text-xl md:text-3xl font-bold">
+          Your Perfect Property? It's Here.
+        </h1>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <button class="bg-white text-black text-[10px] whitespace-nowrap md:text-sm px-4 py-2 rounded-lg">
+            Find properties
+          </button>
+          <button class="bg-white text-black text-[10px] whitespace-nowrap md:text-sm px-4 py-2 rounded-lg">
+            Create listing
+          </button>
+        </div>
+      </header>
+
+      <div class="block md:flex items-center justify-between gap-10 mt-6 md:mt-0">
+        <div class="rounded-3xl p-6 flex justify-between items-center bg-[#F2F5FF] w-full md:w-1/2">
+          <div class="flex-1 flex flex-col items-center justify-center">
+            <div class="w-[158.19px] h-[32px]">
+              <img src="images/logo.png" alt="Shelter Logo" class="object-cover h-full w-full" />
+            </div>
+            <p class="mb-4 text-black font-medium">
+              Connects you with verified, high-quality properties. Whether
+              you're listing a space or looking to book, we ensure every
+              property meets top standards for a smooth and trustworthy
+              experience.
+            </p>
+            <div class="flex space-x-2 items-start text-start ml-0">
+              <img src="images/google.png" alt="Google Play" class="w-24 h-8" />
+              <img src="images/apple.png" alt="App Store" class="w-24 h-8" />
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-8 w-full md:w-1/2 mt-10 md:mt-0">
+          <div>
+            <h3 class="font-bold mb-2">Popular cities</h3>
+            <ul class="space-y-1">
+              <li>Abuja</li>
+              <li>Lagos</li>
+              <li>Ibadan</li>
+              <li>Benin</li>
+              <li>Kano</li>
+              <li>Port-Harcourt</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold mb-2">Properties</h3>
+            <ul class="space-y-1">
+              <li>Shortlet</li>
+              <li>Hotels</li>
+              <li>Event spaces</li>
+              <li>Apartments</li>
+              <li>Land</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold mb-2">Resources</h3>
+            <ul class="space-y-1">
+              <li>About us</li>
+              <li>Blog</li>
+              <li>Become a lister</li>
+              <li>Terms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 flex items-center justify-between w-full md:w-1/2">
+        <p>&copy; 2024 Shelter</p>
+        <div class="flex items-center space-x-2">
+          <div class="bg-white w-6 h-6 rounded-md">
+            <img src="images/facebook.png" alt="" class="w-full h-full" />
+          </div>
+          <div class="bg-white w-6 h-6 rounded-md">
+            <img src="images/twitter.png" alt="" class="w-full h-full" />
+          </div>
+          <div class="bg-white w-6 h-6 rounded-md">
+            <img src="images/instagram.png" alt="" class="w-full h-full" />
+          </div>
+          <div class="bg-white w-6 h-6 rounded-md">
+            <img src="images/linkedIn.png" alt="" class="w-full h-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/js/all.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

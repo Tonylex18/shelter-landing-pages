@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shelter Property Listings</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+  <nav class="relative bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="images/logo.png" alt="Shelter Logo" class="h-8" />
+      </div>
+
+      <!-- Hamburger Menu Button -->
+      <button id="hamburgerBtn" class="md:hidden text-gray-700 focus:outline-none z-60">
+        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <ul id="desktopMenu" class="hidden md:flex space-x-8">
+        <li>
+          <a href="index.html" class="text-gray-700 hover:text-blue-900">Home</a>
+        </li>
+        <li>
+          <a href="listPropeties.html" class="text-gray-700 hover:text-blue-900">List a property</a>
+        </li>
+        <li>
+          <a href="blog.html" class="text-gray-700 hover:text-blue-900">Blog</a>
+        </li>
+        <li>
+          <a href="aboutUs.html" class="text-gray-700 hover:text-blue-900">About us</a>
+        </li>
+      </ul>
+
+      <!-- Desktop Location and CTA -->
+      <div id="desktopActions" class="hidden md:flex items-center space-x-4 z-10">
+        <div class="flex items-center text-gray-700 gap-2">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Abuja, Nigeria</span>
+        </div>
+        <button class="flex items-center px-4 py-2 bg-blue-900 text-white rounded-full gap-2">
+          <i class="fa-regular fa-user"></i>
+          Get started
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="md:hidden fixed inset-0 bg-white z-50 overflow-y-auto">
+      <div class="p-4 relative">
+        <!-- Close Button -->
+        <button id="closeBtn" class="absolute top-4 right-4 text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Logo in Mobile Menu -->
+        <div class="flex justify-center mb-8 mt-8">
+          <img src="images/logo.png" alt="Shelter Logo" class="h-10" />
+        </div>
+
+        <!-- Menu Items -->
+        <ul class="space-y-6 text-center">
+          <li>
+            <a href="index.html" class="block text-xl text-gray-700 hover:text-blue-900 py-2">Home</a>
+          </li>
+          <li>
+            <a href="listPropeties.html" class="block text-xl text-gray-700 hover:text-blue-900 py-2">List a
+              property</a>
+          </li>
+          <li>
+            <a href="blog.html" class="block text-xl text-gray-700 hover:text-blue-900 py-2">Blog</a>
+          </li>
+          <li>
+            <a href="aboutUs.html" class="block text-xl text-gray-700 hover:text-blue-900 py-2">About us</a>
+          </li>
+        </ul>
+
+        <div class="mt-12 px-4 space-y-4">
+          <div class="flex items-center justify-center text-gray-700 gap-2 text-lg">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Abuja, Nigeria</span>
+          </div>
+          <button
+            class="w-full flex items-center justify-center px-4 py-3 bg-blue-900 text-white rounded-full gap-2 text-lg">
+            <i class="fa-regular fa-user"></i>
+            Get started
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <!-- Hero section -->
+    <div class="relative w-full h-[400px]">
+      <img
+        src="images/heroBlog.png"
+        alt="Background"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute bottom-0 left-0 p-8">
+        <h1 class="text-white text-3xl font-bold">
+          Real estate tips you can bank on!
+        </h1>
+      </div>
+    </div>
+
+    <!-- Recent post -->
+    <section class="bg-white">
+      <div class="max-w-6xl mx-5 md:mx-auto py-16 border-b">
+        <h1 class="text-2xl font-bold text-gray-800 mb-8">Most recent post</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div
+            class="relative bg-white rounded-lg shadow-lg overflow-hidden lg:col-span-1"
+          >
+            <img
+              src="images/post1.png"
+              alt="Post Image"
+              class="w-full h-48 lg:h-full object-cover"
+            />
+            <div
+              class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black to-transparent w-full flex items-center justify-between"
+            >
+              <div class="w-[70%]">
+                <h2 class="text-white text-lg font-bold">
+                  The act of living in T-pain's Abuja
+                </h2>
+                <p class="text-white text-[12px]">
+                  Welcome to T-Pain's Abuja, where the struggle is real, the
+                  bills are even realer, and...
+                </p>
+              </div>
+              <div class="text-white mt-2">
+                <a
+                  href="#"
+                  class="inline-block bg-white text-black rounded-full p-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:col-span-1">
+            <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="images/post1.png"
+                alt="Post Image"
+                class="w-full h-48 object-cover"
+              />
+              <div
+                class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black to-transparent w-full flex items-center justify-between"
+              >
+                <div class="w-[70%]">
+                  <h2 class="text-white text-lg font-bold">
+                    The act of living in T-pain's Abuja
+                  </h2>
+                  <p class="text-white text-[12px]">
+                    Welcome to T-Pain's Abuja, where the struggle is real, the
+                    bills are even realer, and...
+                  </p>
+                </div>
+                <div class="text-white mt-2">
+                  <a
+                    href="#"
+                    class="inline-block bg-white text-black rounded-full p-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="images/post1.png"
+                alt="Post Image"
+                class="w-full h-48 object-cover"
+              />
+              <div
+                class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black to-transparent w-full flex items-center justify-between"
+              >
+                <div class="w-[70%]">
+                  <h2 class="text-white text-lg font-bold">
+                    The act of living in T-pain's Abuja
+                  </h2>
+                  <p class="text-white text-[12px]">
+                    Welcome to T-Pain's Abuja, where the struggle is real, the
+                    bills are even realer, and...
+                  </p>
+                </div>
+                <div class="text-white mt-2">
+                  <a
+                    href="#"
+                    class="inline-block bg-white text-black rounded-full p-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:col-span-1">
+            <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="images/post1.png"
+                alt="Post Image"
+                class="w-full h-48 object-cover"
+              />
+              <div
+                class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black to-transparent w-full flex items-center justify-between"
+              >
+                <div class="w-[70%]">
+                  <h2 class="text-white text-lg font-bold">
+                    The act of living in T-pain's Abuja
+                  </h2>
+                  <p class="text-white text-[12px]">
+                    Welcome to T-Pain's Abuja, where the struggle is real, the
+                    bills are even realer, and...
+                  </p>
+                </div>
+                <div class="text-white mt-2">
+                  <a
+                    href="#"
+                    class="inline-block bg-white text-black rounded-full p-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="images/post1.png"
+                alt="Post Image"
+                class="w-full h-48 object-cover"
+              />
+              <div
+                class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black to-transparent w-full flex items-center justify-between"
+              >
+                <div class="w-[70%]">
+                  <h2 class="text-white text-lg font-bold">
+                    The act of living in T-pain's Abuja
+                  </h2>
+                  <p class="text-white text-[12px]">
+                    Welcome to T-Pain's Abuja, where the struggle is real, the
+                    bills are even realer, and...
+                  </p>
+                </div>
+                <div class="text-white mt-2">
+                  <a
+                    href="#"
+                    class="inline-block bg-white text-black rounded-full p-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative bg-white rounded-lg shadow-lg overflow-hidden lg:col-span-1"
+          >
+            <img
+              src="images/post1.png"
+              alt="Post Image"
+              class="w-full h-48 lg:h-full object-cover"
+            />
+            <div
+              class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black to-transparent w-full flex items-center justify-between"
+            >
+              <div class="w-[70%]">
+                <h2 class="text-white text-lg font-bold">
+                  The act of living in T-pain's Abuja
+                </h2>
+                <p class="text-white text-[12px]">
+                  Welcome to T-Pain's Abuja, where the struggle is real, the
+                  bills are even realer, and...
+                </p>
+              </div>
+              <div class="text-white mt-2">
+                <a
+                  href="#"
+                  class="inline-block bg-white text-black rounded-full p-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resourse -->
+    <section class="bg-white">
+      <div class="max-w-6xl mx-5 md:mx-auto py-16">
+        <h1 class="text-2xl font-bold text-gray-800 mb-8">All resources</h1>
+        <div class="mb-8">
+          <div class="w-full md:w-1/2 mx-auto flex">
+            <input
+              type="text"
+              placeholder="search"
+              class="w-full p-4 border rounded-tl-md rounded-bl-md focus:outline-none outline-none"
+            />
+            <div
+              class="right-4 top-4 border h-full p-4 rounded-tr-md rounded-br-md"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="images/image4.png"
+              alt="Resource Image"
+              class="w-full h-48 object-cover rounded-lg"
+            />
+            <div class="p-4">
+              <h2 class="text-sm font-bold text-gray-800">
+                The act of living in T-pain's Abuja
+              </h2>
+              <p class="text-gray-600 mb-4 text-[12px]">
+                Welcome to T-Pain's Abuja, where the struggle is real, the bills
+                are even realer, and the only thing rising faster than the
+                sun...
+              </p>
+              <div
+                class="flex justify-between items-center text-gray-500 text-sm"
+              >
+                <span>Dara Olanrewaju</span>
+                <span>27/02/2024</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="images/image4.png"
+              alt="Resource Image"
+              class="w-full h-48 object-cover rounded-lg"
+            />
+            <div class="p-4">
+              <h2 class="text-sm font-bold text-gray-800">
+                The act of living in T-pain's Abuja
+              </h2>
+              <p class="text-gray-600 mb-4 text-[12px]">
+                Welcome to T-Pain's Abuja, where the struggle is real, the bills
+                are even realer, and the only thing rising faster than the
+                sun...
+              </p>
+              <div
+                class="flex justify-between items-center text-gray-500 text-sm"
+              >
+                <span>Dara Olanrewaju</span>
+                <span>27/02/2024</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="images/image4.png"
+              alt="Resource Image"
+              class="w-full h-48 object-cover rounded-lg"
+            />
+            <div class="p-4">
+              <h2 class="text-sm font-bold text-gray-800">
+                The act of living in T-pain's Abuja
+              </h2>
+              <p class="text-gray-600 mb-4 text-[12px]">
+                Welcome to T-Pain's Abuja, where the struggle is real, the bills
+                are even realer, and the only thing rising faster than the
+                sun...
+              </p>
+              <div
+                class="flex justify-between items-center text-gray-500 text-sm"
+              >
+                <span>Dara Olanrewaju</span>
+                <span>27/02/2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-black text-white rounded-t-3xl">
+      <div class="max-w-screen-xl mx-auto p-6">
+        <header class="md:flex justify-between items-center py-4">
+          <h1 class="text-xl md:text-3xl font-bold">
+            Your Perfect Property? It's Here.
+          </h1>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <button
+              class="bg-white text-black text-[10px] whitespace-nowrap md:text-sm px-4 py-2 rounded-lg"
+            >
+              Find properties
+            </button>
+            <button
+              class="bg-white text-black text-[10px] whitespace-nowrap md:text-sm px-4 py-2 rounded-lg"
+            >
+              Create listing
+            </button>
+          </div>
+        </header>
+
+        <div
+          class="block md:flex items-center justify-between gap-10 mt-6 md:mt-0"
+        >
+          <div
+            class="rounded-3xl p-6 flex justify-between items-center bg-[#F2F5FF] w-full md:w-1/2"
+          >
+            <div class="flex-1 flex flex-col items-center justify-center">
+              <div class="w-[158.19px] h-[32px]">
+                <img
+                  src="images/logo.png"
+                  alt="Shelter Logo"
+                  class="object-cover h-full w-full"
+                />
+              </div>
+              <p class="mb-4 text-black font-medium">
+                Connects you with verified, high-quality properties. Whether
+                you're listing a space or looking to book, we ensure every
+                property meets top standards for a smooth and trustworthy
+                experience.
+              </p>
+              <div class="flex space-x-2 items-start text-start ml-0">
+                <img
+                  src="images/google.png"
+                  alt="Google Play"
+                  class="w-24 h-8"
+                />
+                <img src="images/apple.png" alt="App Store" class="w-24 h-8" />
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-8 w-full md:w-1/2 mt-10 md:mt-0">
+            <div>
+              <h3 class="font-bold mb-2">Popular cities</h3>
+              <ul class="space-y-1">
+                <li>Abuja</li>
+                <li>Lagos</li>
+                <li>Ibadan</li>
+                <li>Benin</li>
+                <li>Kano</li>
+                <li>Port-Harcourt</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold mb-2">Properties</h3>
+              <ul class="space-y-1">
+                <li>Shortlet</li>
+                <li>Hotels</li>
+                <li>Event spaces</li>
+                <li>Apartments</li>
+                <li>Land</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold mb-2">Resources</h3>
+              <ul class="space-y-1">
+                <li>About us</li>
+                <li>Blog</li>
+                <li>Become a lister</li>
+                <li>Terms</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 flex items-center justify-between w-full md:w-1/2">
+          <p>&copy; 2024 Shelter</p>
+          <div class="flex items-center space-x-2">
+            <div class="bg-white w-6 h-6 rounded-md">
+              <img src="images/facebook.png" alt="" class="w-full h-full" />
+            </div>
+            <div class="bg-white w-6 h-6 rounded-md">
+              <img src="images/twitter.png" alt="" class="w-full h-full" />
+            </div>
+            <div class="bg-white w-6 h-6 rounded-md">
+              <img src="images/instagram.png" alt="" class="w-full h-full" />
+            </div>
+            <div class="bg-white w-6 h-6 rounded-md">
+              <img src="images/linkedIn.png" alt="" class="w-full h-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/js/all.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
